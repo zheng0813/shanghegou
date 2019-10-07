@@ -18,9 +18,9 @@
         </div>
       </header>
       <section>
-         <el-carousel indicator-position="outside">
-          <el-carousel-item v-for="item in 3" :key="item">
-            <h3>{{ item }}<img src="../../static/homeimg/1562646052756625.jpg" alt=""></h3>
+        <el-carousel>
+          <el-carousel-item v-for="item in dataimg" :key="item" class="lunbo">
+            <img :src="item.src">
           </el-carousel-item>
         </el-carousel>
       </section>
@@ -30,7 +30,20 @@
 
 <script>
 export default {
-  
+  data() {
+			return {
+				dataimg: [{
+						src: require('../../static/homeimg/1562646052756625.jpg'),
+					},
+					{
+						src: require('../../static/homeimg/1566374709192337.jpg'),
+					},
+					{
+						src: require('../../static/homeimg/1567740086493831.jpg'),
+					}
+				]
+			}
+  }
 }
 </script>
 
@@ -75,23 +88,18 @@ export default {
       }
     }
     section{
-      margin-top: 10px;
-      .el-carousel__item h3 {
-        color: #475669;
-        font-size: 18px;
-        opacity: 0.75;
-        line-height: 300px;
-        margin: 0;
-      }
-      
-      .el-carousel__item:nth-child(2n) {
-        background-color: #99a9bf;
-      }
-      
-      .el-carousel__item:nth-child(2n+1) {
-        background-color: #d3dce6;
-      }
+      .lunbo{
+        background-color: #fff;
+        max-width: 800px;
+        max-height: 387px;
+        img{
+          width: 100%;
+          // max-width: 800px;
+          // max-height: 387px;
+          display: block;
+          margin: auto;
+        }
+      } 
     }
   }
-  
 </style>
