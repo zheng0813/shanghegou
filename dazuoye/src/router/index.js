@@ -5,6 +5,8 @@ import index from '@/components/index'
 import kind from '@/components/kind'
 import bus from '@/components/bus'
 import mine from '@/components/mine'
+import life from '@/components/life'
+import push from '@/components/push'
 
 Vue.use(Router)
 
@@ -23,7 +25,19 @@ export default new Router({
         {
           path: '/kind',
           name: 'kind',
-          component: kind
+          component: kind,
+          children:[
+            {
+              path: '/life',
+              name: 'life',
+              component: life
+            },
+            {
+              path: '/push',
+              name: 'push',
+              component: push
+            }
+          ]
         },
         {
           path: '/bus',

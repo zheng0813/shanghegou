@@ -16,9 +16,19 @@
 						<li><router-link to="">消息</router-link></li>
 					</ul>
 				</span>
+				<div class="all-search"></div>
 			</el-header>
-			<el-aside></el-aside>
-			<el-main></el-main>
+			<el-main class="box-main">
+				<el-aside width="84px">
+					<ul>
+						<li @click="but" :class="{'c1':bb}"><router-link to="push">品牌推荐</router-link></li>
+						<li @click="but" :class="{'c1':!bb}"><router-link to="life">居家生活</router-link></li>
+					</ul>
+				</el-aside>
+				<el-main>
+					<router-view></router-view>
+				</el-main>
+			</el-main>
 		</el-container>
     </div>
 </header>
@@ -28,7 +38,8 @@
 	export default {
 		data:function(){
 			return{
-				aa:false
+				aa:false,
+				bb:true
 			}
 		},
 		methods:{
@@ -41,6 +52,13 @@
 				}else{
 					this.aa=false
 				}
+			},
+			but(){
+				if(this.bb==false){
+					this.bb=true
+				}else{
+					this.bb=false
+				}
 			}
 		}
 	}
@@ -48,11 +66,67 @@
 <style lang="less" scoped>
 	.kind-box{
 		.el-container{
+			.box-main{
+				display: flex;
+				flex-wrap: nowrap;
+				height: 85vh;
+				width: 100%;
+				padding: 0;
+				.el-aside{
+					height: 85vh;
+					background-color: #f2f2f2;
+					ul{
+						width: 84px;
+						height: 126px;
+						padding: 0 11px;
+						padding: 0;
+						text-decoration: none;
+						margin: 0;
+						li{
+							border-bottom: 2px solid transparent;
+							a{
+								display: block;
+								width: 62px;
+								height: 63px;
+								margin: auto;
+								color: #999;
+								background: url(../../static/kindimg/degault.png);
+								background-repeat: no-repeat;
+								background-size: 25px;
+								padding-top: 40px;
+								background-position: center 10px;
+								text-align: center;
+								box-sizing: border-box;
+								text-decoration: none;
+							}
+						}
+						.c1{
+							a{
+								color: #318e8b;
+							}
+							border-bottom: 2px solid #318e8b;
+						}
+					}
+				}
+				.el-main{
+					flex-grow: 1;
+					background-color: #fcfcfc;
+					padding: 0;
+				}
+			}
 			.el-header{
 				width: 100%;
 				height: 45px;
 				padding: 0;
 				position: relative;
+				.all-search{
+					width: 100%;
+					height: 45px;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 10;
+				}
 				i{
 					display: inline-block;
 				    width: 9px;
@@ -62,11 +136,7 @@
 				    position: absolute;
 				    top: 14px;
 				    left: 10px;
-				    a{
-				    	display: inline-block;
-				    	width: 9px;
-				    	height: 17px;
-				    }
+				    z-index: 11;
 				}
 				.search{
 					display: inline-block;
@@ -103,6 +173,7 @@
 					background-repeat: no-repeat;
 					background-position: center;
 					background-size: 20px;
+					z-index: 11;
 					.sanjiao{
 						width: 0;
 						height: 0;
