@@ -19,6 +19,7 @@ export default {
 </script>
 <style lang="less">
 .el-carousel{
+  // 轮播图变换图片
   .el-carousel__button{
     width: 8px;
     height: 8px;
