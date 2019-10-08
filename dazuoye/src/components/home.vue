@@ -65,7 +65,7 @@ export default {
             margin-top: 6px;
             font-size: 0.5rem;
             color: #888;
-            line-height: 1.2rem;
+            line-height: 13px;
           }
         }
       }

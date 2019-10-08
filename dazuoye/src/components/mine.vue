@@ -1,0 +1,164 @@
+<template>
+  <div class="mine">
+    <div class="bg">
+      <div class="donghua">
+        <router-link to='' class="yuan"></router-link>
+        <router-link to='' class="into">登录</router-link>
+        <router-link to='' class="zhuce">| 注册</router-link>
+      </div>
+    </div>
+    <div class="gongneng">
+      <dl>
+        <dd>
+          <ul>
+            <li><router-link to='index'><div></div><h3>待付款</h3></router-link></li>
+            <li><router-link to='kind'><div></div><h3>代发货</h3></router-link></li>
+            <li><router-link to='bus'><div></div><h3>待收货</h3></router-link></li>
+            <li><router-link to='mine'><div></div><h3>售后</h3></router-link></li>
+          </ul>
+        </dd>
+        <dt></dt>
+      </dl>
+    </div>
+  </div>
+</template>
+<script>
+export default{
+  
+}
+</script>
+<style lang="less" scoped>
+  @keyframes donghua{
+    form{
+      top: -80px;
+    }
+    20%{
+      top: -50px;
+    }
+    40%{
+      top: 200px;
+    }
+    60%{
+      top: 180px;
+    }
+    80%{
+      top: 200px;
+    }
+    to{
+      top: 80px;
+    }
+  }
+  .mine{
+    .bg{
+      text-align: center;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      height: 250px;
+      background:url(../../static/mineimg/head_bg_02.png) no-repeat center;
+      background-size: cover;
+      .donghua{
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        animation: donghua 1.5s forwards;
+        .yuan{
+          display: block;
+          width: 70px;
+          height: 70px;
+          border-radius: 35px;
+          background-color: rgba(0, 0, 0, 0.5);
+          margin: 0 auto;
+          line-height: 250px;
+          position: absolute;
+          top: 0px;
+          left: 145px;
+        }
+        .into,.zhuce{
+          font-size: 16px;
+          position: absolute;
+          bottom: 0px;
+          left: 140px;
+          text-decoration: none;
+          color: white;
+        }
+        .zhuce{
+          left: 177px;
+        }
+      }
+    }
+    .gongneng{
+      margin-top: 10px;
+      width: 100%;
+      border-top: 1px solid red;
+      dl{
+        background-color: #FFF;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+        margin:0px;
+        dd{
+          display: block;
+          padding: 10px 0 5px;
+          margin: 0px;
+          ul{
+            padding: 0;
+            display: flex;
+            font-size: 0;
+            box-sizing: border-box;
+            justify-content: space-between;
+            li{
+              width: 25%;
+              height: 54px;
+              display: flex;
+              justify-content: center;
+              a{
+                text-decoration: none;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                div{
+                  width: 27px;
+                  height: 27px;
+                  display: inline-block;
+                  margin-top: 6px;
+                }
+                h3{
+                  width: 100%;
+                  text-align: center;
+                  padding: 0;
+                  margin-top: 6px;
+                  font-size: 12px;
+                  color: #222;
+                  line-height: 13px;
+                }
+              }
+            }
+            & :first-child{
+              div{
+                background: url(../../static/mineimg/Shopping_05.png) no-repeat center;
+                background-size: contain;
+              }
+            }
+            & :nth-child(2){
+              div{
+                background: url(../../static/mineimg/Shopping_07.png) no-repeat center;
+                background-size: contain;
+              }
+            }
+            & :nth-child(3){
+              div{
+                background: url(../../static/mineimg/Shopping_04.png) no-repeat center;
+                background-size: contain;
+              }
+            }
+            & :nth-child(4){
+              div{
+                background: url(../../static/mineimg/Shopping_06.png) no-repeat center;
+                background-size: contain;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+</style>
