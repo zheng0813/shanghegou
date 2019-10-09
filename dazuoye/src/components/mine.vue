@@ -11,13 +11,18 @@
       <dl>
         <dd>
           <ul>
-            <li><router-link to='index'><div></div><h3>待付款</h3></router-link></li>
-            <li><router-link to='kind'><div></div><h3>代发货</h3></router-link></li>
-            <li><router-link to='bus'><div></div><h3>待收货</h3></router-link></li>
-            <li><router-link to='mine'><div></div><h3>售后</h3></router-link></li>
+            <li><router-link to=''><div></div><h3>待付款</h3></router-link></li>
+            <li><router-link to=''><div></div><h3>代发货</h3></router-link></li>
+            <li><router-link to=''><div></div><h3>待收货</h3></router-link></li>
+            <li><router-link to=''><div></div><h3>售后</h3></router-link></li>
           </ul>
         </dd>
-        <dt></dt>
+        <dt><router-link to=''><i></i>我的订单<span></span></router-link></dt>
+        <dt><router-link to=''><i></i>我的收藏<span></span></router-link></dt>
+        <dt><router-link to=''><i></i>我的足迹<span></span></router-link></dt>
+        <dt><router-link to=''><i></i>账号管理<span></span></router-link></dt>
+        <dt><router-link to=''><i></i>收货地址<span></span></router-link></dt>
+        <dt><router-link to=''><i></i>在线客服<span></span></router-link></dt>
       </dl>
     </div>
   </div>
@@ -49,6 +54,7 @@ export default{
     }
   }
   .mine{
+    margin-bottom: 60px;
     .bg{
       text-align: center;
       width: 100%;
@@ -90,7 +96,7 @@ export default{
     .gongneng{
       margin-top: 10px;
       width: 100%;
-      border-top: 1px solid red;
+      border-top: 1px solid #dddddd;
       dl{
         background-color: #FFF;
         box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
@@ -156,6 +162,69 @@ export default{
                 background-size: contain;
               }
             }
+          }
+        }
+        dt{
+          a{
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 44px;
+            color: #222;
+            vertical-align: top;
+            display: flex;
+            align-items: center;
+            position: relative;
+            i{
+              display: inline-block;
+              width: 15px;
+              height: 15px;
+              margin: 20px 10px;
+            }
+            span{
+              width: 9px;
+              height: 15px;
+              display: inline-block;
+              background: url(../../static/mineimg/bbc-bg44.png) no-repeat center;
+              background-size: contain;
+              position: absolute;
+              right: 15px;
+            }
+          }
+        }
+        & :nth-child(2){
+          i{
+            background: url(../../static/mineimg/new-mc1.png) no-repeat center;
+            background-size: contain;
+          }
+        }
+        & :nth-child(3){
+          i{
+            background: url(../../static/mineimg/new-mc2.png) no-repeat center;
+            background-size: contain;
+          }
+        }
+        & :nth-child(4){
+          i{
+            background: url(../../static/mineimg/new-mc3.png) no-repeat center;
+            background-size: contain;
+          }
+        }
+        & :nth-child(5){
+          i{
+            background: url(../../static/mineimg/new-mc5.png) no-repeat center;
+            background-size: contain;
+          }
+        }
+        & :nth-child(6){
+          i{
+            background: url(../../static/mineimg/new-mc6.png) no-repeat center;
+            background-size: contain;
+          }
+        }
+        & :nth-child(7){
+          i{
+            background: url(../../static/mineimg/new-mc7.png) no-repeat center;
+            background-size: contain;
           }
         }
       }
