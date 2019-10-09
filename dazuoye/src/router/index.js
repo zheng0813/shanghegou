@@ -7,6 +7,7 @@ import bus from '@/components/bus'
 import mine from '@/components/mine'
 import life from '@/components/life'
 import push from '@/components/push'
+import search from '@/components/search'
 
 Vue.use(Router)
 
@@ -51,6 +52,11 @@ export default new Router({
           component: mine
         }
       ]
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: search
     }
   ]
 })

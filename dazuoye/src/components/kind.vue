@@ -16,7 +16,7 @@
 						<li><router-link to="">消息</router-link></li>
 					</ul>
 				</span>
-				<div class="all-search"></div>
+				<div class="all-search"><router-link to="search"></router-link></div>
 			</el-header>
 			<el-main class="box-main">
 				<el-aside width="84px">
@@ -126,6 +126,13 @@
 					top: 0;
 					left: 0;
 					z-index: 10;
+					a{
+						display: inline-block;
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						z-index: 11;
+					}
 				}
 				i{
 					display: inline-block;
@@ -136,7 +143,7 @@
 				    position: absolute;
 				    top: 14px;
 				    left: 10px;
-				    z-index: 11;
+				    z-index: 13;
 				}
 				.search{
 					display: inline-block;
@@ -173,7 +180,7 @@
 					background-repeat: no-repeat;
 					background-position: center;
 					background-size: 20px;
-					z-index: 11;
+					z-index: 13;
 					.sanjiao{
 						width: 0;
 						height: 0;
