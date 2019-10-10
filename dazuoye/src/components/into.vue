@@ -16,9 +16,9 @@
         </form>
       </div>
       <div class="forget">
-        <el-row :gutter="20">
-            <el-col :span="14"><div>&nbsp;</div></el-col>
-            <el-col :span="10">
+        <el-row :gutter="20" style="margin:0">
+            <el-col :span="13"><div>&nbsp;</div></el-col>
+            <el-col :span="11">
               <div>
                 <router-link to=''>忘记会员编号</router-link>
                 <router-link to=''>| 忘记密码</router-link>
@@ -31,6 +31,10 @@
         <router-link to='' class="enroll-btn">注册</router-link>
       </div>
 		</section>
+    <footer>
+      <p>版权仅为尚赫公司所有，未经许可不得转载或链接</p>
+      <p>津ICP备17004905号-3 丨津ICP备17004905号-2丨</p>
+    </footer>
 	</div>
 </template>
 <script>
@@ -68,6 +72,7 @@ export default{
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
     i{
       display: inline-block;
       width: 9px;
@@ -88,6 +93,7 @@ export default{
   }
   section{
     width: 100%;
+    box-sizing: border-box;
     .shanghegou{
       width: 200px;
       height: 100px;
@@ -100,8 +106,8 @@ export default{
       }
     }
     .xian{
-          border-bottom: 1px solid #7cecd0;
-        }
+      border-bottom: 1px solid #7cecd0;
+    }
     .into{
       position: relative;
       input{
@@ -157,6 +163,8 @@ export default{
       }
     }
     .btn{
+      padding-bottom: 130px;
+      border-bottom: 1px solid #ddd;
       a{
         display: block;
         width: 90%;
@@ -175,6 +183,17 @@ export default{
         color: #666666;
         border: 1px solid #666666;
       }
+    }
+  }
+  footer{
+    padding-top: 15px;
+    box-sizing: border-box;
+    p{
+      color: #999;
+      text-align: center;
+      font-size: 12px;
+      line-height: 24px;
+      margin: 0;
     }
   }
 </style>
