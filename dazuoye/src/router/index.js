@@ -9,6 +9,8 @@ import life from '@/components/life'
 import push from '@/components/push'
 import search from '@/components/search'
 import into from '@/components/into'
+import shop from '@/components/shop'
+import list from '@/components/list'
 
 Vue.use(Router)
 
@@ -63,6 +65,16 @@ export default new Router({
       path: '/into',
       name: 'into',
       component: into
+    },
+    {
+      path: '/shop',
+      name: 'shop',
+      component: shop
+    },
+    {
+      path: '/list',
+      name: 'list',
+      component: list
     }
   ]
 })
