@@ -1,6 +1,6 @@
 <template>
 	<div class="search-box">
-		<div class="del-box"  v-if="delbox">
+		<div class="del-box"  v-show="delbox">
 			<p></p>
 			<div class="box">
 				<div>确认清空历史记录？</div>
@@ -13,23 +13,23 @@
 			<div class="search">
 				<span @click="show">
 					<input type="button" v-model="z" class="btn">
-					<span class="sanjiao" v-show="aa"></span>
-					<ul v-show="aa">
+					<span class="sanjiao" v-show="vshow"></span>
+					<ul v-show="vshow">
 						<li @click="baby" :class="{'c2':tt}">宝贝</li>
 						<li @click="store" :class="{'c2':!tt}">店铺</li>
 					</ul>
 				</span>
-				<input type="text" v-model="bb" placeholder="珐琅铸铁锅">
+				<input type="text" v-model="vmodel" placeholder="珐琅铸铁锅">
 			</div>
 			<span>
-				<input type="button" value="搜索" @click="search(bb)">
+				<input type="button" value="搜索" @click="search(vmodel)">
 			</span>
 		</header>
 		<section>
 			<div>
 				热门搜索
 			</div>
-			<dl>
+			<dl v-show="JSON.stringify(zhi)!='{}'">
 				<dt>历史搜索</dt>
 				<dd v-for="item in zhi">{{item}}</dd>
 				<p @click="del">
@@ -40,15 +40,14 @@
     </div>
 </template>
 <script>
-	var v = JSON.parse(localStorage.getItem("zhi"))
 	export default {
 		data:function(){
 			return{
-				aa:false,
-				bb:"",
+				vshow:false,
+				vmodel:"",
 				z:"宝贝",
 				tt:true,
-				zhi:v,
+				zhi:JSON.parse(localStorage.getItem("zhi")),
 				delbox:false
 			}
 		},
@@ -57,10 +56,10 @@
 				history.back()
 			},
 			show:function(){
-				if(this.aa==false){
-					this.aa=true
+				if(this.vshow==false){
+					this.vshow=true
 				}else{
-					this.aa=false
+					this.vshow=false
 				}
 			},
 			baby(){
@@ -79,23 +78,23 @@
 				}
 				this.z="店铺"
 			},
-			search(bb){
-				if(!this.bb){
-					bb="珐琅铸铁锅"
+			search(vmodel){
+				if(!this.vmodel){
+					vmodel="珐琅铸铁锅";
+					this.zhi = {}
 				}
-				console.log(bb)
 				var d1 = new Date();
 				for(var i in this.zhi){
-					if(this.zhi[i]==bb){
+					if(this.zhi[i]==vmodel){
 						delete this.zhi[i]
 					}
 				}
-				this.zhi[d1.getTime()]=bb;
+				this.zhi["'"+d1.getTime()+"'"]=vmodel;
 				localStorage.setItem("zhi",JSON.stringify(this.zhi));
 				this.$router.push({
 					name:"list",
 					params:{
-						bb
+						vmodel
 					}
 				})
 			},
@@ -103,7 +102,8 @@
 				this.delbox=true;
 			},
 			ok(){
-				localStorage.setItem("zhi",'');
+				localStorage.setItem("zhi","{}")
+				this.zhi=JSON.parse(localStorage.getItem("zhi"))
 				this.delbox=false
 			},
 			no(){
@@ -168,7 +168,7 @@
 		section{
 			background-color: #f2f2f2;
 			width: 100%;
-			height: 90vh;
+			height: 93vh;
 			div{
 				width: 100%;
 				height: 53px;
