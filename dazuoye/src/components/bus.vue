@@ -14,7 +14,6 @@
 						<li><router-link to="">消息</router-link></li>
 					</ul>
 				</span>
-			</el-header>
 		</header>
 		<section>
 			<div class="bus">

@@ -3,26 +3,26 @@
     <div class="bg">
       <div class="donghua">
         <router-link to='' class="yuan"></router-link>
-        <router-link to='' class="into">登录</router-link>
-        <router-link to='' class="zhuce">| 注册</router-link>
+        <router-link to='into' class="into">登录</router-link>
+        <router-link to='into' class="zhuce">| 注册</router-link>
       </div>
     </div>
     <div class="gongneng">
       <dl>
         <dd>
           <ul>
-            <li><router-link to=''><div></div><h3>待付款</h3></router-link></li>
-            <li><router-link to=''><div></div><h3>代发货</h3></router-link></li>
-            <li><router-link to=''><div></div><h3>待收货</h3></router-link></li>
-            <li><router-link to=''><div></div><h3>售后</h3></router-link></li>
+            <li><router-link to='into'><div></div><h3>待付款</h3></router-link></li>
+            <li><router-link to='into'><div></div><h3>代发货</h3></router-link></li>
+            <li><router-link to='into'><div></div><h3>待收货</h3></router-link></li>
+            <li><router-link to='into'><div></div><h3>售后</h3></router-link></li>
           </ul>
         </dd>
-        <dt><router-link to=''><i></i>我的订单<span></span></router-link></dt>
-        <dt><router-link to=''><i></i>我的收藏<span></span></router-link></dt>
-        <dt><router-link to=''><i></i>我的足迹<span></span></router-link></dt>
-        <dt><router-link to=''><i></i>账号管理<span></span></router-link></dt>
-        <dt><router-link to=''><i></i>收货地址<span></span></router-link></dt>
-        <dt><router-link to=''><i></i>在线客服<span></span></router-link></dt>
+        <dt><router-link to='into'><i></i>我的订单<span></span></router-link></dt>
+        <dt><router-link to='into'><i></i>我的收藏<span></span></router-link></dt>
+        <dt><router-link to='into'><i></i>我的足迹<span></span></router-link></dt>
+        <dt><router-link to='into'><i></i>账号管理<span></span></router-link></dt>
+        <dt><router-link to='into'><i></i>收货地址<span></span></router-link></dt>
+        <dt><router-link to='into'><i></i>在线客服<span></span></router-link></dt>
       </dl>
     </div>
   </div>

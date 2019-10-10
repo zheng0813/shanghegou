@@ -30,9 +30,7 @@
 				</el-main>
 			</el-main>
 		</el-container>
-    </div>
-</header>
-	</div>
+  </div>
 </template>
 <script>
 	export default {

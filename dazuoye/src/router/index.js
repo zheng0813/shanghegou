@@ -8,6 +8,7 @@ import mine from '@/components/mine'
 import life from '@/components/life'
 import push from '@/components/push'
 import search from '@/components/search'
+import into from '@/components/into'
 
 Vue.use(Router)
 
@@ -57,6 +58,11 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: search
+    },
+    {
+      path: '/into',
+      name: 'into',
+      component: into
     }
   ]
 })
