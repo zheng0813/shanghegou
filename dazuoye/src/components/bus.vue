@@ -2,19 +2,18 @@
 	<div class="bus-box">
 		<header>
 			<i @click="goto"></i>
-				<div class="search">
-					购物车
-				</div>
-				<span @click="show">
-					<div class="sanjiao" v-show="aa"></div>
-					<ul v-show="aa">
-						<li><router-link to="index">首页</router-link></li>
-						<li><router-link to="bus">购物车</router-link></li>
-						<li><router-link to="mine">我的商城</router-link></li>
-						<li><router-link to="">消息</router-link></li>
-					</ul>
-				</span>
-			</el-header>
+			<div class="search">
+				购物车
+			</div>
+			<span @click="show">
+				<div class="sanjiao" v-show="aa"></div>
+				<ul v-show="aa">
+					<li><router-link to="index">首页</router-link></li>
+					<li><router-link to="bus">购物车</router-link></li>
+					<li><router-link to="mine">我的商城</router-link></li>
+					<li><router-link to="">消息</router-link></li>
+				</ul>
+			</span>
 		</header>
 		<section>
 			<div class="bus">

@@ -1,5 +1,13 @@
 <template>
 	<div class="search-box">
+		<div class="del-box"  v-if="delbox">
+			<p></p>
+			<div class="box">
+				<div>确认清空历史记录？</div>
+				<span @click="ok">确认</span>
+				<span @click="no">取消</span>
+			</div>
+		</div>
 		<header height="45px">
 			<i @click="goto"></i>
 			<div class="search">
@@ -14,19 +22,34 @@
 				<input type="text" v-model="bb" placeholder="珐琅铸铁锅">
 			</div>
 			<span>
-				<router-link to="">搜索</router-link>
+				<input type="button" value="搜索" @click="search(bb)">
 			</span>
 		</header>
+		<section>
+			<div>
+				热门搜索
+			</div>
+			<dl>
+				<dt>历史搜索</dt>
+				<dd v-for="item in zhi">{{item}}</dd>
+				<p @click="del">
+					清空历史记录
+				</p>
+			</dl>
+		</section>
     </div>
 </template>
 <script>
+	var v = JSON.parse(localStorage.getItem("zhi"))
 	export default {
 		data:function(){
 			return{
 				aa:false,
 				bb:"",
 				z:"宝贝",
-				tt:true
+				tt:true,
+				zhi:v,
+				delbox:false
 			}
 		},
 		methods:{
@@ -55,11 +78,143 @@
 					this.tt=false
 				}
 				this.z="店铺"
+			},
+			search(bb){
+				if(!this.bb){
+					bb="珐琅铸铁锅"
+				}
+				console.log(bb)
+				var d1 = new Date();
+				for(var i in this.zhi){
+					if(this.zhi[i]==bb){
+						delete this.zhi[i]
+					}
+				}
+				this.zhi[d1.getTime()]=bb;
+				localStorage.setItem("zhi",JSON.stringify(this.zhi));
+				this.$router.push({
+					name:"list",
+					params:{
+						bb
+					}
+				})
+			},
+			del(){
+				this.delbox=true;
+			},
+			ok(){
+				localStorage.setItem("zhi",'');
+				this.delbox=false
+			},
+			no(){
+				this.delbox=false
 			}
 		}
 	}
 </script>
 <style lang="less" scoped>
+	.search-box{
+		position: relative;
+		.del-box{
+			width: 100%;
+			height: 100vh;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: transparent;
+			z-index: 100;
+			p{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: #000;
+				margin: 0;
+				opacity: 0.75;
+			}
+			.box{
+				width: 222px;
+				height: 126px;
+				border-radius: 3px;
+				background-color: white;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				div{
+					width: 100%;
+					height: 84px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					color: #017472;
+					font-size: 15px;
+					border-bottom: 1px solid #bbb;
+				}
+				span{
+					display: inline-block;
+					width: 108px;
+					height: 41px;
+					text-align: center;
+					line-height: 41px;
+				}
+				& :nth-child(2){
+					border-right: 1px solid #bbb;
+				}
+			}
+		}
+	}
+		section{
+			background-color: #f2f2f2;
+			width: 100%;
+			height: 90vh;
+			div{
+				width: 100%;
+				height: 53px;
+				padding: 11px;
+				background-color: white;
+				box-sizing: border-box;
+				font-size: 15px;
+				color: #222;
+			}
+			dl{
+				background-color: white;
+				padding-bottom: 30px;
+				box-sizing: border-box;
+				dt{
+					width: 100%;
+					height: 48px;
+					box-sizing: border-box;
+					color: #222;
+					padding: 15px 0 10px 10px;
+					font-size: 15px;
+				}
+				dd{
+					width: 100%;
+					height: 45px;
+					box-sizing: border-box;
+					color: #666;
+					padding: 0px 0 0px 10px;
+					font-size: 15px;
+					margin: 0;
+					line-height: 45px;
+				}
+				p{
+					width: 282px;
+					height: 46px;
+					margin: 49px auto 0;
+					color: #666;
+					font-size: 15px;
+					line-height: 46px;
+					text-align: center;
+					border: 1px solid #bcbcbc;
+					border-radius: 4px;
+					background: url(../../static/search/delete.png) no-repeat 65px center;
+					background-size: 20px;
+				}
+			}
+		}
 		header{
 				width: 100%;
 				height: 45px;
@@ -162,7 +317,10 @@
 					top: 0;
 					right: 0;
 					z-index: 11;
-					a{
+					input{
+						background-color: white;
+						border: none;
+						outline: none;
 						width: 100%;
 						height: 100%;
 						display: flex;

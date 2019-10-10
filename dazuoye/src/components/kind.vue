@@ -31,8 +31,6 @@
 			</el-main>
 		</el-container>
     </div>
-</header>
-	</div>
 </template>
 <script>
 	export default {

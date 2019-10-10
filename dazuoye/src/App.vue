@@ -5,6 +5,9 @@
 </template>
 
 <script>
+	if(!localStorage.getItem("zhi")){
+		localStorage.setItem("zhi","{}")
+	}
 export default {
   name: 'App'
 }

@@ -8,6 +8,8 @@ import mine from '@/components/mine'
 import life from '@/components/life'
 import push from '@/components/push'
 import search from '@/components/search'
+import shop from '@/components/shop'
+import list from '@/components/list'
 
 Vue.use(Router)
 
@@ -57,6 +59,16 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: search
+    },
+    {
+      path: '/shop',
+      name: 'shop',
+      component: shop
+    },
+    {
+      path: '/list',
+      name: 'list',
+      component: list
     }
   ]
 })

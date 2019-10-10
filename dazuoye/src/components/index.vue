@@ -2,6 +2,7 @@
   <el-container class="hello">
     <el-header class="home" height="42px">
       <el-header >
+        <div class="all-search"><router-link to="search"></router-link></div>
         <div class="search">
           <!-- 搜索框 -->
           <el-row :gutter="20">
@@ -103,6 +104,21 @@ export default{
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
+  .all-search{
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    a{
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 11;
+    }
+  }
   .home{
     background-color: #fff;
     header{
@@ -140,6 +156,7 @@ export default{
           position: absolute;
           right: 0px;
           top: 4px;
+          z-index: 20;
           background:url(../../static/homeimg/wap2_03.png) no-repeat center;
           background-size: cover;
         }
