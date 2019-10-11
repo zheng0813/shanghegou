@@ -31,7 +31,7 @@
 			</div>
 			<dl v-show="JSON.stringify(zhi)!='{}'">
 				<dt>历史搜索</dt>
-				<dd v-for="item in zhi">{{item}}</dd>
+				<dd v-for="item in zhi" @click="lishi(item)">{{item}}</dd>
 				<p @click="del">
 					清空历史记录
 				</p>
@@ -52,6 +52,14 @@
 			}
 		},
 		methods:{
+			lishi(item){
+				this.$router.push({
+					name:"list",
+					params:{
+						vmodel:item
+					}
+				})
+			},
 			goto:function(){
 				history.back()
 			},
@@ -81,7 +89,6 @@
 			search(vmodel){
 				if(!this.vmodel){
 					vmodel="珐琅铸铁锅";
-					this.zhi = {}
 				}
 				var d1 = new Date();
 				for(var i in this.zhi){
