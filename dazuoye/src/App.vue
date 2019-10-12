@@ -16,5 +16,6 @@ export default {
 <style>
   body{
     margin:0;
+    font-size: 13px;
   }
 </style>
