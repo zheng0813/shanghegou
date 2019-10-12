@@ -43,7 +43,10 @@
           <img src="../../static/homeimg/1568684292913591.jpg" alt="">
           <!-- 商品 -->
           <ul>
-            <li v-for="(item,i) in stop" :key="i"><img :src="item.src"><div class="imgmsg">{{item.msg}}</div></li>
+            <li v-for="(item,i) in stop" :key="i" @click="tiao(item)">
+              <img :src="item.src">
+              <div class="imgmsg">{{item.msg}}</div>
+            </li>
           </ul>
         </div>
       </section>
@@ -53,52 +56,62 @@
 <script>
 export default{
    data() {
-			return {
-				dataimg: [{
-						src: require('../../static/homeimg/1562646052756625.jpg'),
-					},
-					{
-						src: require('../../static/homeimg/1566374709192337.jpg'),
-					},
-					{
-						src: require('../../static/homeimg/1567740086493831.jpg'),
-					}
-        ],
-        stop: [
-          {
-            src: require('../../static/homeimg/1568794333295635.png'),
-            msg: '水机六分三通'
-          },
-          {
-            src: require('../../static/homeimg/1568795216812492.png'),
-            msg: '道尔顿滤芯外壳'
-          },
-          {
-            src: require('../../static/homeimg/1568795183522584.png'),
-            msg: '水机——道滤芯外壳'
-          },
-          {
-            src: require('../../static/homeimg/1568795130842151.png'),
-            msg: '水机转换开关'
-          },
-          {
-            src: require('../../static/homeimg/1568795092197251.png'),
-            msg: '空气净化器金属脚轮'
-          },
-          {
-            src: require('../../static/homeimg/1568795049320978.png'),
-            msg: '泡棉壳'
-          },
-          {
-            src: require('../../static/homeimg/1568794578236599.png'),
-            msg: '底部初效滤网'
-          },
-          {
-            src: require('../../static/homeimg/1568794523106181.png'),
-            msg: '侧边初效滤网'
-          },
-        ]
-			}
+    return {
+      dataimg: [{
+          src: require('../../static/homeimg/1562646052756625.jpg'),
+        },
+        {
+          src: require('../../static/homeimg/1566374709192337.jpg'),
+        },
+        {
+          src: require('../../static/homeimg/1567740086493831.jpg'),
+        }
+      ],
+      stop: [
+        {
+          src: '../../static/homeimg/1568794333295635.png',
+          msg: '水机六分三通'
+        },
+        {
+          src: '../../static/homeimg/1568795216812492.png',
+          msg: '道尔顿滤芯外壳'
+        },
+        {
+          src: '../../static/homeimg/1568795183522584.png',
+          msg: '水机——道滤芯外壳'
+        },
+        {
+          src: '../../static/homeimg/1568795130842151.png',
+          msg: '水机转换开关'
+        },
+        {
+          src: '../../static/homeimg/1568795092197251.png',
+          msg: '空气净化器金属脚轮'
+        },
+        {
+          src: '../../static/homeimg/1568795049320978.png',
+          msg: '泡棉壳'
+        },
+        {
+          src: '../../static/homeimg/1568794578236599.png',
+          msg: '底部初效滤网'
+        },
+        {
+          src: '../../static/homeimg/1568794523106181.png',
+          msg: '侧边初效滤网'
+        },
+      ]
+    }
+  },
+  methods:{
+    tiao(item){
+      this.$router.push({
+        name:"shop",
+        params:{
+          item
+        }
+      })
+    }
   }
 }
 </script>

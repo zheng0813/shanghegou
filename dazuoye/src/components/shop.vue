@@ -1,6 +1,6 @@
 <template>
 	<div class="shop-box">
-		<img src="../../static/shopimg/1.jpg" alt="" class="img-dong" :class="{'zuoshang':youxia}">
+		<img :src="mingzi.src" alt="" class="img-dong" :class="{'zuoshang':youxia}">
 		<i @click="goto" class="go-out"></i>
 		<span @click="show" class="news">
 		<div class="sanjiao" v-show="aa"></div>
@@ -35,11 +35,11 @@
 		<section>
 			<el-carousel style="height:360px" :loop="false" :autoplay="false">
 				<el-carousel-item v-for="(item,i) in footimg" :key="i" class="lunbo1" style="margin:0,height:360px">
-					<img :src="item.src">
+					<img :src="mingzi.src">
 				</el-carousel-item>
 			</el-carousel>
 			<div class="msg">
-				<div class="name">艾沐浴足粉</div>
+				<div class="name">{{mingzi.msg}}</div>
 				<div class="price">￥ 189.00</div>
 				<div class="count"><span>PV值:95</span><span>销量:586件</span></div>
 				<div class="place">
@@ -68,16 +68,16 @@
 			<ul>
 				<li><router-link to=''>客服</router-link></li>
 				<li><router-link to=''>收藏</router-link></li>
-				<li><router-link to=''>购物车</router-link></li>
+				<li><router-link to='bus'>购物车</router-link></li>
 				<li @click="popup"><router-link to=''>加入购物车</router-link></li>
 				<li><router-link to=''>立即购买</router-link></li>
 			</ul>
 		</footer>
-		<div class="pop-up" v-show="del2">
+		<div class="pop-up" v-show="del2" :style="{top:high}">
 			<div class="dake" @click="del1"></div>
 			<div class="high-light">
-				<img src="../../static/shopimg/1.jpg" alt="">
-				<div class="name">艾沐浴足粉<b @click="close">X</b></div>
+				<img :src="mingzi.src" alt="">
+				<div class="name">{{mingzi.msg}}<b @click="close">X</b></div>
 				<div class="price">￥ 189.00<span>库存:92件</span></div>
 				<div class="count"><span>PV值:95</span><span>销量:586件</span></div>
 				<div class="kong"></div>
@@ -99,15 +99,19 @@
 </template>
 <script>
 import VDistpicker from 'v-distpicker'
+
 export default{
 	components: { VDistpicker },
   data:function(){
 			return{
 				aa:false,
 				dis:false,
-				del2:true,
+				del2:false,
 				count:1,
 				youxia:false,
+				mingzi:'',
+				high:'0px',
+				kind:JSON.parse(localStorage.getItem("kind")),
 				footimg: [{
 						src: require('../../static/shopimg/1.jpg'),
 					},
@@ -126,6 +130,16 @@ export default{
         ],
 			}
 		},
+		created(){
+			if(!this.$route.params.item){
+				this.mingzi = {
+          src: '../../static/homeimg/1568795183522584.png',
+          msg: '水机——道滤芯外壳'
+        }
+			}else{
+				this.mingzi=this.$route.params.item
+			}
+		},
 		mounted: function () {
 			window.addEventListener('scroll', this.handleScroll, true)
 		},
@@ -141,19 +155,16 @@ export default{
 				}
 			},
 			popup(){
-				var pop = document.querySelector('.pop-up')
 				this.del2 = true
-				pop.style.top = '0px'
+				this.high = '0px'
 				this.youxia = false
 			},
 			close(){
-				var pop = document.querySelector('.pop-up')
-				pop.style.top = '640px'
+				this.high = '640px'
 				this.youxia = false
 			},
 			del1(){
-				var pop = document.querySelector('.pop-up')
-				pop.style.top = '640px'
+				this.high = '640px'
 				this.youxia = false
 			},
 			handleScroll(e){
@@ -173,9 +184,16 @@ export default{
 			},
 			addcar(){
 				this.youxia = true
-				console.log('1')
-				var pop = document.querySelector('.pop-up')
-				pop.style.top = '640px'
+				this.high = '640px';
+				for(var i in this.kind){
+					console.log(this.kind)
+					if(this.mingzi.msg==this.kind[i].msg){
+						delete this.kind[i]
+					}
+				}
+				var d1 = new Date();
+				this.kind["'"+d1.getTime()+"'"]=this.mingzi;
+				localStorage.setItem("kind",JSON.stringify(this.kind));
 			}
 		}
 	}
