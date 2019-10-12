@@ -31,7 +31,7 @@
         </el-carousel>
         <ul class="index-nav">
           <li><router-link to=''><div></div><h3>尚</h3></router-link></li>
-          <li><router-link to=''><div></div><h3>赫</h3></router-link></li>
+          <li><router-link to='shop'><div></div><h3>赫</h3></router-link></li>
           <li><router-link to=''><div></div><h3>购</h3></router-link></li>
           <li><router-link to=''><div></div><h3>商</h3></router-link></li>
           <li><router-link to=''><div></div><h3>城</h3></router-link></li>

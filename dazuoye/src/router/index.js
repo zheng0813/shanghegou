@@ -75,6 +75,6 @@ export default new Router({
       path: '/list',
       name: 'list',
       component: list
-    }
+    },
   ]
 })
