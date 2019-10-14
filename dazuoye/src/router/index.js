@@ -11,6 +11,8 @@ import search from '@/components/search'
 import into from '@/components/into'
 import shop from '@/components/shop'
 import list from '@/components/list'
+import store from '@/components/store'
+import storeIndex from '@/components/storeIndex'
 
 Vue.use(Router)
 
@@ -75,6 +77,18 @@ export default new Router({
       path: '/list',
       name: 'list',
       component: list
+    },
+    {
+      path: '/store',
+      name: 'store',
+      component: store,
+      children:[
+        {
+          path: '/storeIndex',
+          name: 'storeIndex',
+          component: storeIndex
+        }
+      ]
     }
   ]
 })

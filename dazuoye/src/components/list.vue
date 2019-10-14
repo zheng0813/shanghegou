@@ -38,10 +38,10 @@
 				<li v-for="item in dataArr" v-if="dataArr.length">
 					<router-link to="">
 						<span>
-							<img :src="item.url">
+							<img :src="item.src">
 						</span>
 						<span>
-							<h4>{{item.name}}</h4>
+							<h4>{{item.msg}}</h4>
 							<p>{{item.price}}</p>
 							<dl>
 								<dd>{{item.sales}}</dd>
@@ -95,57 +95,57 @@
 				rew:this.$route.params.vmodel,
 				data:[
 					{
-						url:"../../static/list/1564588192499244.jpg",
-						name:"珐琅铸铁锅",
+						src:"../../static/list/1564588192499244.jpg",
+						msg:"珐琅铸铁锅",
 						price:"￥899.00",
 						sales:"销量 597",
 						ping:"评论 0"
 					},
 					{
-						url:"../../static/list/1564588164547025.jpg",
-						name:"艾沐浴足粉",
+						src:"../../static/list/1564588164547025.jpg",
+						msg:"艾沐浴足粉",
 						price:"￥189.00",
 						sales:"销量 586",
 						ping:"评论 0"
 					},
 					{
-						url:"../../static/list/1564588102544373.jpg",
-						name:"尚和丽清压片糖果(组)",
+						src:"../../static/list/1564588102544373.jpg",
+						msg:"尚和丽清压片糖果(组)",
 						price:"￥1266.00",
 						sales:"销量 4981",
 						ping:"评论 0"
 					},
 					{
-						url:"../../static/list/1564588064892843.jpg",
-						name:"妍皙气垫粉凝霜自然色",
+						src:"../../static/list/1564588064892843.jpg",
+						msg:"妍皙气垫粉凝霜自然色",
 						price:"￥149.00",
 						sales:"销量 320",
 						ping:"评论 0"
 					},
 					{
-						url:"../../static/list/1564587941139195.jpg",
-						name:"茶树精油旅行套组",
+						src:"../../static/list/1564587941139195.jpg",
+						msg:"茶树精油旅行套组",
 						price:"￥59.00",
 						sales:"销量 3532",
 						ping:"评论 0"
 					},
 					{
-						url:"../../static/list/1564587877312301.jpg",
-						name:"便当盒",
+						src:"../../static/list/1564587877312301.jpg",
+						msg:"便当盒",
 						price:"￥85.00",
 						sales:"销量 1928",
 						ping:"评论 0"
 					},
 					{
-						url:"../../static/list/1568180092913556.jpg",
-						name:"道尔顿滤壳扳手",
+						src:"../../static/list/1568180092913556.jpg",
+						msg:"道尔顿滤壳扳手",
 						price:"￥32.00",
 						sales:"销量 201",
 						ping:"评论 0"
 					},
 					{
-						url:"../../static/list/1568180406608134.jpg",
-						name:"电源线",
+						src:"../../static/list/1568180406608134.jpg",
+						msg:"电源线",
 						price:"￥35.00",
 						sales:"销量 200",
 						ping:"评论 0"
@@ -159,7 +159,7 @@
 				this.dataArr = [...this.data];
 			}else{
 				for(var i=0;i<this.data.length;i++){
-					if(this.data[i].name==this.rew){
+					if(this.data[i].msg==this.rew){
 						this.dataArr.push(this.data[i])
 					}
 				}
@@ -680,7 +680,7 @@
 		height: 45px;
 		padding: 0;
 		position: fixed;
-		z-index: 1;
+		z-index: 2;
 		top:0;
 		border-bottom: 1px solid #bbb;
 		font-size: 13px;

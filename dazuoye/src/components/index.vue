@@ -32,7 +32,7 @@
         <ul class="index-nav">
           <li><router-link to='list'><div></div><h3>尚</h3></router-link></li>
           <li><router-link to=''><div></div><h3>赫</h3></router-link></li>
-          <li><router-link to=''><div></div><h3>购</h3></router-link></li>
+          <li><router-link to='store'><div></div><h3>购</h3></router-link></li>
           <li><router-link to=''><div></div><h3>商</h3></router-link></li>
           <li><router-link to=''><div></div><h3>城</h3></router-link></li>
         </ul>
