@@ -5,9 +5,16 @@
 </template>
 
 <script>
+
+
 	if(!localStorage.getItem("zhi")){
 		localStorage.setItem("zhi","{}")
-	}
+  }
+  
+  if(!localStorage.getItem("kind")){
+		localStorage.setItem("kind","{}")
+  }
+  // localStorage.setItem("kind","{}")
 export default {
   name: 'App'
 }
