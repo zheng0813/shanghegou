@@ -32,14 +32,14 @@
 					<div class="shanghegou">
 						尚赫GO
 					</div>
-					<div class="write">
+					<div class="write" @click="shanchu1">
 						编辑
 					</div>
 				</li>
 				<li v-for="(item,b,i) in count" :key='i'>
 					<img :src="item.src" alt="">
 					<div class="name">{{item.msg}}</div>
-					<div class="box" @click="delbox=true">删除</div>
+					<div class="rem" @click="delbox=item.msg" v-show='shanchu'>删除</div>
 				</li>
 			</ul>
 		</section>
@@ -52,6 +52,7 @@
 				aa:false,
 				count:JSON.parse(localStorage.getItem("kind")),
 				delbox:false,
+				shanchu:false,
 			}
 		},
 		mounted(){
@@ -69,12 +70,24 @@
 				}
 			},
 			ok(){
-				localStorage.setItem("kind","{}")
-				this.count=JSON.parse(localStorage.getItem("kind"))
+				for(var i in this.count){
+					if(this.count[i].msg==this.delbox){
+						delete this.count[i]
+						localStorage.setItem("kind",JSON.stringify(this.count))
+					}
+				}
+				
 				this.delbox=false
 			},
 			no(){
 				this.delbox=false
+			},
+			shanchu1(){
+				if(this.shanchu == false){
+					this.shanchu = true
+				}else{
+				this.shanchu = false
+				}
 			}
 		}
 	}
@@ -156,15 +169,26 @@
 				border: 1px solid #ddd;
 				box-sizing: border-box;
 				position: relative;
+				.rem{
+					width: 50px;
+					background-color:#017472;
+					color:white;
+					text-align: center;
+					height: 30px;
+					line-height: 30px;
+					position: absolute;
+					top: 35px;
+					right: 20px;
+				}
 				img{
 					width: 90px;
 					height: 90px;
 					position: absolute;
-					left: 30px;
-					top: 20px;
+					left: 35px;
+					top: 0px;
 				}
 				.name{
-					margin-left: 200px;
+					margin-left: 170px;
 				}
 				.shanghegou{
 					width: 150px;
@@ -178,7 +202,7 @@
 					padding-right: 5px;
 				}
 			}
-			& :first-child{
+			& >:first-child{
 				line-height: 50px;
 				height: 50px;
 				display: flex;

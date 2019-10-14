@@ -68,7 +68,7 @@
 			<ul>
 				<li><router-link to=''>客服</router-link></li>
 				<li><router-link to=''>收藏</router-link></li>
-				<li><router-link to='bus'>购物车</router-link></li>
+				<li><router-link to='bus'>购物车<span v-show=one>{{one}}</span></router-link></li>
 				<li @click="popup"><router-link to=''>加入购物车</router-link></li>
 				<li><router-link to=''>立即购买</router-link></li>
 			</ul>
@@ -111,6 +111,7 @@ export default{
 				youxia:false,
 				mingzi:'',
 				high:'0px',
+				one:'',
 				kind:JSON.parse(localStorage.getItem("kind")),
 				footimg: [{
 						src: require('../../static/shopimg/1.jpg'),
@@ -142,6 +143,11 @@ export default{
 		},
 		mounted: function () {
 			window.addEventListener('scroll', this.handleScroll, true)
+			var a = []
+				for(var ii in JSON.parse(localStorage.getItem("kind"))){
+					a.push(ii)
+				}
+				this.one=a.length
 		},
 		methods:{
 			goto:function(){
@@ -186,14 +192,18 @@ export default{
 				this.youxia = true
 				this.high = '640px';
 				for(var i in this.kind){
-					console.log(this.kind)
 					if(this.mingzi.msg==this.kind[i].msg){
 						delete this.kind[i]
 					}
 				}
-				var d1 = new Date();
+				var d1 = new Date()
 				this.kind["'"+d1.getTime()+"'"]=this.mingzi;
 				localStorage.setItem("kind",JSON.stringify(this.kind));
+				var a = []
+				for(var ii in JSON.parse(localStorage.getItem("kind"))){
+					a.push(ii)
+				}
+				this.one=a.length
 			}
 		}
 	}
@@ -588,10 +598,21 @@ select{
 				line-height: 60px;
 				border: 1px solid #ddd;
 				box-sizing: border-box;
+				position: relative;
 				a{
 					color:#017472;
 					border: none;
 					text-decoration: none;
+				}
+				span{
+					width: 10px;
+					height: 10px;
+					line-height: 10px;
+					border: 1px solid #017472;
+					border-radius: 10px;
+					position: absolute;
+					top: 5px;
+					right: 5px;
 				}
 			}
 			& >:nth-child(1){
