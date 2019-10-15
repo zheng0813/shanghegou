@@ -16,6 +16,10 @@ import recommend from '@/components/recommend'
 import list from '@/components/list'
 import store from '@/components/store'
 import storeIndex from '@/components/storeIndex'
+import storeAll from '@/components/storeAll'
+import storeActive from '@/components/storeActive'
+import storeNew from '@/components/storeNew'
+import storeShow from '@/components/storeShow'
 
 Vue.use(Router)
 
@@ -100,14 +104,35 @@ export default new Router({
       component: list
     },
     {
+      path: '/storeShow',
+      name: 'storeShow',
+      component: storeShow
+    },
+    {
       path: '/store',
       name: 'store',
       component: store,
+      redirect: "storeIndex",
       children:[
         {
           path: '/storeIndex',
           name: 'storeIndex',
           component: storeIndex
+        },
+        {
+          path: '/storeAll',
+          name: 'storeAll',
+          component: storeAll
+        },
+        {
+          path: '/storeActive',
+          name: 'storeActive',
+          component: storeActive
+        },
+        {
+          path: '/storeNew',
+          name: 'storeNew',
+          component: storeNew
         }
       ]
     }

@@ -14,12 +14,12 @@
 					<li><router-link to="index">首页</router-link></li>
 					<li><router-link to="bus">购物车</router-link></li>
 					<li><router-link to="mine">我的商城</router-link></li>
-					<li><router-link to="">消息</router-link></li>
+					<li><router-link to="into">消息</router-link></li>
 				</ul>
 			</span>
 			<div class="all-search"><router-link to="search"></router-link></div>
 		</header>
-		<nav>
+		<nav id="nav">
 			<p @click="pai" :class="{'color':!color}">{{str}}
 				<i></i>
 				<ul v-show="paishow" style="color:#000">
@@ -35,8 +35,8 @@
 		</nav>
 		<section>
 			<ul :class="{'bujv':bimage}">
-				<li v-for="item in dataArr" v-if="dataArr.length">
-					<router-link to="">
+				<li v-for="item in dataArr" v-if="dataArr.length" @click="chuan(item)">
+					<a>
 						<span>
 							<img :src="item.src">
 						</span>
@@ -48,7 +48,7 @@
 								<dd>{{item.ping}}</dd>
 							</dl>
 						</span>
-					</router-link>
+					</a>
 				</li>
 				<dl class="kong" v-if="!dataArr.length">
 					<dd>
@@ -80,6 +80,8 @@
 	</div>
 </template>
 <script>
+	import Vue from 'vue'
+	var bus = new Vue();
 	export default {
 		data(){
 			return{
@@ -169,6 +171,14 @@
 			chongzhi(){
 				this.low = "";
 				this.high = "";
+			},
+			chuan(item){
+				this.$router.push({
+				        name:"shop",
+				        params:{
+				          item
+				        }
+				      })
 			},
 			chulai(){
 				var aside = document.querySelector("aside")
