@@ -53,11 +53,11 @@
 				<i></i>
 			</div>
 			<div class="shangheGO">
-				<div class="GO"><span></span>尚赫GO<i></i></div>
+				<div class="GO"><span></span>尚赫GO<i></i><router-link to="store"></router-link></div>
 				<div class="buyed">
-					<router-link to=''><span></span>描述相符<p>5.00</p></router-link>
-					<router-link to=''><span></span>服务态度<p>5.00</p></router-link>
-					<router-link to=''><span></span>发货速度<p>5.00</p></router-link>
+					<router-link to='store'><span></span>描述相符<p>5.00</p></router-link>
+					<router-link to='store'><span></span>服务态度<p>5.00</p></router-link>
+					<router-link to='store'><span></span>发货速度<p>5.00</p></router-link>
 				</div>
 			</div>
 			<div class="detail">
@@ -515,6 +515,14 @@ select{
 				padding: 11px 0 5px;
 				position: relative;
 				z-index: 1;
+				position: relative;
+				a{
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
 				span{
 					width: 15px;
 					height: 15px;

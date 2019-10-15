@@ -12,10 +12,10 @@
 		</div>
 		<div class="nav">
 			<ul>
-				<li><span @click="image=1" :class="image==1?'image':''"><router-link to="storeIndex">店铺首页</router-link></span></li>
-				<li><span @click="image=2" :class="image==2?'image':''"><router-link to="">全部商品</router-link></span></li>
-				<li><span @click="image=3" :class="image==3?'image':''"><router-link to="">商品上新</router-link></span></li>
-				<li><span @click="image=4" :class="image==4?'image':''"><router-link to="">店铺活动</router-link></span></li>
+				<li><span><router-link to="storeIndex">店铺首页</router-link></span></li>
+				<li><span><router-link to="storeAll">全部商品</router-link></span></li>
+				<li><span><router-link to="storeNew">商品上新</router-link></span></li>
+				<li><span><router-link to="storeActive">店铺活动</router-link></span></li>
 			</ul>
 		</div>
 		<router-view></router-view>
@@ -106,20 +106,19 @@
 					justify-content: center;
 					align-items: center;
 					span{
-						border-bottom: 2px solid transparent;
+						.router-link-active{
+							border-bottom: 2px solid #017472;
+							color: #017472;
+						}
 					}
 					a{
+						display: inline-block;
 						text-decoration: none;
 						font-size: 15px;
 						color: #666;
-						height: 48px;
-						line-height: 48px;
-					}
-					.image{
-						border-bottom: 2px solid #017472;
-						a{
-							color: #017472;
-						}
+						height: 45px;
+						line-height: 45px;
+						border-bottom: 2px solid transparent;
 					}
 				}
 			}

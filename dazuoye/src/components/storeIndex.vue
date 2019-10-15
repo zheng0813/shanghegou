@@ -8,12 +8,12 @@
 					<li><span @click="yang(2)" :class="color==2?'color':''">销量排行</span></li>
 				</ul>
 				<div>
-					<dl v-for="i in data">
+					<dl v-for="item in data" @click="chuan(item)">
 						<dt>
-							<img :src="i.src" alt="">
+							<img :src="item.src" alt="">
 						</dt>
-						<dd>{{i.sales}}</dd>
-						<dd>{{i.price}}</dd>
+						<dd>{{item.sales}}</dd>
+						<dd>{{item.price}}</dd>
 					</dl>
 				</div>
 			</dd>
@@ -50,6 +50,14 @@
 			}
 		},
 		methods:{
+			chuan(item){
+				this.$router.push({
+				        name:"shop",
+				        params:{
+				          item
+				        }
+				      })
+			},
 			yang(i){
 				this.color=i;
 				if(i==1){
