@@ -10,6 +10,9 @@ import push from '@/components/push'
 import search from '@/components/search'
 import into from '@/components/into'
 import shop from '@/components/shop'
+import shangpin from '@/components/shangpin'
+import detial from '@/components/detial'
+import recommend from '@/components/recommend'
 import list from '@/components/list'
 import store from '@/components/store'
 import storeIndex from '@/components/storeIndex'
@@ -71,7 +74,25 @@ export default new Router({
     {
       path: '/shop',
       name: 'shop',
-      component: shop
+      component: shop,
+      redirect:'shangpin',
+      children:[
+        {
+          path: '/shangpin',
+          name: 'shangpin',
+          component: shangpin
+        },
+        {
+          path: '/detial',
+          name: 'detial',
+          component: detial
+        },
+        {
+          path: '/recommend',
+          name: 'recommend',
+          component: recommend
+        }
+      ]
     },
     {
       path: '/list',

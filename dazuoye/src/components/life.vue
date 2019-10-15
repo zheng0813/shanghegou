@@ -1,9 +1,9 @@
 <template>
 	<div class="life-box">
 		<ul>
-			<li><div></div><router-link to="">全部子分类</router-link></li>
-			<li><div></div><router-link to="">居家好物</router-link></li>
-			<li><div></div><router-link to="">居家品质</router-link></li>
+			<li><div></div><router-link to="list">全部子分类</router-link></li>
+			<li><div></div><router-link to="list">居家好物</router-link></li>
+			<li><div></div><router-link to="list">居家品质</router-link></li>
 		</ul>
 	</div>
 </template>

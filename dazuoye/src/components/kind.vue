@@ -13,7 +13,7 @@
 						<li><router-link to="index">首页</router-link></li>
 						<li><router-link to="bus">购物车</router-link></li>
 						<li><router-link to="mine">我的商城</router-link></li>
-						<li><router-link to="">消息</router-link></li>
+						<li><router-link to="into">消息</router-link></li>
 					</ul>
 				</span>
 				<div class="all-search"><router-link to="search"></router-link></div>
