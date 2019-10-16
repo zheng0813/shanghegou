@@ -34,9 +34,9 @@
 			<div class="shangheGO">
 				<div class="GO"><span></span>尚赫GO<i></i><router-link to='store'></router-link></div>
 				<div class="buyed">
-					<router-link to=''><span></span>描述相符<p>5.00</p></router-link>
-					<router-link to=''><span></span>服务态度<p>5.00</p></router-link>
-					<router-link to=''><span></span>发货速度<p>5.00</p></router-link>
+					<router-link to='store'><span></span>描述相符<p>5.00</p></router-link>
+					<router-link to='store'><span></span>服务态度<p>5.00</p></router-link>
+					<router-link to='store'><span></span>发货速度<p>5.00</p></router-link>
 				</div>
 			</div>
 			<div class="detail">
@@ -45,11 +45,11 @@
 		</section>
 		<footer>
 			<ul>
-				<li><router-link to=''>客服</router-link></li>
-				<li><router-link to=''>收藏</router-link></li>
+				<li><router-link to='into'>客服</router-link></li>
+				<li><router-link to='into'>收藏</router-link></li>
 				<li><router-link to='bus'>购物车<span v-show=one>{{one}}</span></router-link></li>
 				<li @click="popup"><router-link to=''>加入购物车</router-link></li>
-				<li><router-link to=''>立即购买</router-link></li>
+				<li><router-link to='into'>立即购买</router-link></li>
 			</ul>
 		</footer>
 		<div class="pop-up" v-show="del2" :style="{top:high}">
@@ -113,11 +113,12 @@ export default{
 			if(!this.$route.params.item){
 				this.mingzi = {
           src: '../../static/homeimg/1568795183522584.png',
-          msg: '水机——道滤芯外壳'
+          msg: '水机——道滤芯外壳',
         }
 			}else{
-				this.mingzi=this.$route.params.item
-			}
+        this.mingzi=this.$route.params.item
+      }
+      document.title= this.mingzi.msg
 		},
 		methods:{
 			goto:function(){

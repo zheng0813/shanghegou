@@ -34,12 +34,18 @@ export default new Router({
         {
           path: '/index',
           name: 'index',
-          component: index 
+          component: index,
+           meta:{
+            title:"尚赫购-首页"
+          },
         },
         {
           path: '/kind',
           name: 'kind',
           component: kind,
+          meta:{
+            title:"尚赫购-商品分类"
+          },
           children:[
             {
               path: '/life',
@@ -56,29 +62,44 @@ export default new Router({
         {
           path: '/bus',
           name: 'bus',
-          component: bus
+          component: bus,
+          meta:{
+            title:"尚赫购-购物车"
+          },
         },
         {
           path: '/mine',
           name: 'mine',
-          component: mine
+          component: mine,
+          meta:{
+            title:"尚赫购-我的商城"
+          },
         }
       ]
     },
     {
       path: '/search',
       name: 'search',
-      component: search
+      component: search,
+      meta:{
+        title:"尚赫购-商品搜索"
+      },
     },
     {
       path: '/into',
       name: 'into',
-      component: into
+      component: into,
+      meta:{
+        title:"登录"
+      },
     },
     {
       path: '/shop',
       name: 'shop',
       component: shop,
+      meta:{
+        title:"尚赫购-商品详情"
+      },
       redirect:'shangpin',
       children:[
         {
@@ -101,23 +122,32 @@ export default new Router({
     {
       path: '/list',
       name: 'list',
-      component: list
+      component: list,
+      meta:{
+        title:"尚赫购-商品列表"
+      },
     },
     {
       path: '/storeShow',
       name: 'storeShow',
-      component: storeShow
+      component: storeShow,
+      meta:{
+        title:"尚赫GO-店铺介绍"
+      },
     },
     {
       path: '/store',
       name: 'store',
       component: store,
       redirect: "storeIndex",
+      meta:{
+            title:"尚赫GO-店铺首页"
+          },
       children:[
         {
           path: '/storeIndex',
           name: 'storeIndex',
-          component: storeIndex
+          component: storeIndex,
         },
         {
           path: '/storeAll',
