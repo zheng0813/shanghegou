@@ -156,6 +156,10 @@ export default{
       }
     }
     .forget{
+      div{
+        text-align: right;
+        box-sizing: border-box;
+      }
       a{
         text-decoration: none;
         color: #666;

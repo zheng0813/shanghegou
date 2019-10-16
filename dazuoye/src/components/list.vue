@@ -61,7 +61,7 @@
 			</ul>
 			<div class="box-shadow" v-show="paishow"></div>
 			<el-backtop :visibility-height="100" :right="10">
-			     <img src="../../static/list/gotop_b.png" alt="">
+			     <img src="/static/list/gotop_b.png" alt="">
 			</el-backtop>
 		</section>
 		<div :class="{'yinying':chu}" @click="ru"></div>
@@ -97,56 +97,56 @@
 				rew:this.$route.params.vmodel,
 				data:[
 					{
-						src:"../../static/list/1564588192499244.jpg",
+						src:"/static/list/1564588192499244.jpg",
 						msg:"珐琅铸铁锅",
 						price:"￥899.00",
 						sales:"销量 597",
 						ping:"评论 0"
 					},
 					{
-						src:"../../static/list/1564588164547025.jpg",
+						src:"/static/list/1564588164547025.jpg",
 						msg:"艾沐浴足粉",
 						price:"￥189.00",
 						sales:"销量 586",
 						ping:"评论 0"
 					},
 					{
-						src:"../../static/list/1564588102544373.jpg",
+						src:"/static/list/1564588102544373.jpg",
 						msg:"尚和丽清压片糖果(组)",
 						price:"￥1266.00",
 						sales:"销量 4981",
 						ping:"评论 0"
 					},
 					{
-						src:"../../static/list/1564588064892843.jpg",
+						src:"/static/list/1564588064892843.jpg",
 						msg:"妍皙气垫粉凝霜自然色",
 						price:"￥149.00",
 						sales:"销量 320",
 						ping:"评论 0"
 					},
 					{
-						src:"../../static/list/1564587941139195.jpg",
+						src:"/static/list/1564587941139195.jpg",
 						msg:"茶树精油旅行套组",
 						price:"￥59.00",
 						sales:"销量 3532",
 						ping:"评论 0"
 					},
 					{
-						src:"../../static/list/1564587877312301.jpg",
+						src:"/static/list/1564587877312301.jpg",
 						msg:"便当盒",
 						price:"￥85.00",
 						sales:"销量 1928",
 						ping:"评论 0"
 					},
 					{
-						src:"../../static/list/1568180092913556.jpg",
+						src:"/static/list/1568180092913556.jpg",
 						msg:"道尔顿滤壳扳手",
 						price:"￥32.00",
 						sales:"销量 201",
 						ping:"评论 0"
 					},
 					{
-						src:"../../static/list/1568180406608134.jpg",
+						src:"/static/list/1568180406608134.jpg",
 						msg:"电源线",
 						price:"￥35.00",
 						sales:"销量 200",
@@ -174,7 +174,7 @@
 			},
 			chuan(item){
 				this.$router.push({
-				        name:"shop",
+				        name:"shangpin",
 				        params:{
 				          item
 				        }
@@ -381,11 +381,11 @@
 }
 .image{
 	color: #017472;
-	background: url(../../static/list/ok.png) no-repeat 90% center;
+	background: url(/static/list/ok.png) no-repeat 90% center;
 	background-size: 20px;
 }
 .bimage{
-	background: url(../../static/list/browse_grid.png) no-repeat center;
+	background: url(/static/list/browse_grid.png) no-repeat center;
 	background-size: 20px;
 }
 .bujv{
@@ -414,9 +414,11 @@
 			display: flex;
 			flex-wrap: wrap;
 			& :nth-child(1){
-				width: 177px;
+				width: 100%;
 				height: 200px;
 				padding: 0;
+				display: block;
+				margin: auto;
 				img{
 					padding: 0;
 					width: 177px;
@@ -456,6 +458,9 @@
 						padding: 0 0 5px;
 						padding: 0;
 						margin: 0;
+					}
+					& :nth-child(2){
+						text-align: right;
 					}
 				}
 			}
@@ -513,7 +518,7 @@
 					i{
 						width: 100%;
 						height: 72px;
-						background: url(../../static/list/bbc-bg49.png) no-repeat center;
+						background: url(/static/list/bbc-bg49.png) no-repeat center;
 						background-size: 60px 60px;
 					}
 					div{
@@ -601,6 +606,9 @@
 								padding: 0;
 								margin: 0;
 							}
+							& :nth-child(2){
+								text-align: right;
+							}
 						}
 					}
 				}
@@ -669,7 +677,7 @@
 			position: absolute;
 			top: 0;
 			left: 55%;
-			background: url(../../static/list/browse_list.png) no-repeat center;
+			background: url(/static/list/browse_list.png) no-repeat center;
 			background-size: 20px;
 			border-right: 1px solid #888;
 		}
@@ -681,7 +689,7 @@
 			position: absolute;
 			top: 0;
 			left: 80%;
-			background: url(../../static/list/sel.png) no-repeat 51px 17px;
+			background: url(/static/list/sel.png) no-repeat 51px 17px;
 			background-size: 13px;
 		}
 	}
@@ -702,7 +710,7 @@
 			position: absolute;
 			top: 0;
 			right: 40px;
-			background-image: url(../../static/list/categroy.png);
+			background-image: url(/static/list/categroy.png);
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: 20px;
@@ -727,7 +735,7 @@
 			display: inline-block;
 		    width: 9px;
 		    height: 17px;
-		    background: url(../../static/kindimg/bbc-bg45.png) no-repeat center;
+		    background: url(/static/kindimg/bbc-bg45.png) no-repeat center;
 		    background-size: cover;
 		    position: absolute;
 		    top: 14px;
@@ -758,7 +766,7 @@
 				position: absolute;
 				top: 10px;
 				left: 20px;
-				background-image: url(../../static/kindimg/search.png);
+				background-image: url(/static/kindimg/search.png);
 				background-size: 13px;
 				background-position: center;
 			}
@@ -770,7 +778,7 @@
 			position: absolute;
 			top: 0;
 			right: 0;
-			background-image: url(../../static/kindimg/bbc-bg48.png);
+			background-image: url(/static/kindimg/bbc-bg48.png);
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: 20px;
@@ -798,7 +806,7 @@
 					height: 42px;
 					line-height: 42px;
 					box-sizing: border-box;
-					background-image: url(../../static/kindimg/icon-in.png);
+					background-image: url(/static/kindimg/icon-in.png);
 					background-repeat: no-repeat;
 					background-size: 18px;
 					background-position: 13px center;
@@ -810,13 +818,13 @@
 					}
 				}
 				& :nth-child(2){
-					background-image: url(../../static/kindimg/bbc-bg15.png);
+					background-image: url(/static/kindimg/bbc-bg15.png);
 				}
 				& :nth-child(3){
-					background-image: url(../../static/kindimg/bbc-bg13.png);
+					background-image: url(/static/kindimg/bbc-bg13.png);
 				}
 				& :nth-child(4){
-					background-image: url(../../static/kindimg/message.png);
+					background-image: url(/static/kindimg/message.png);
 				}
 			}
 		}

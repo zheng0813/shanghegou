@@ -40,7 +40,7 @@
 				</div>
 			</div>
 			<div class="detail">
-				<router-link to=''>点击查看商品详情</router-link>
+				<router-link to='detial'>点击查看商品详情</router-link>
 			</div>
 		</section>
 		<footer>
@@ -137,11 +137,11 @@ export default{
 				this.youxia = false
 			},
 			close(){
-				this.high = '640px'
+				this.high = '100vh'
 				this.youxia = false
 			},
 			del1(){
-				this.high = '640px'
+				this.high = '100vh'
 				this.youxia = false
 			},
 			jian(){
@@ -154,7 +154,7 @@ export default{
 			},
 			addcar(){
 				this.youxia = true
-				this.high = '640px';
+				this.high = '100vh';
 				for(var i in this.kind){
 					if(this.mingzi.msg==this.kind[i].msg){
 						delete this.kind[i]
@@ -172,6 +172,12 @@ export default{
 		}
 	}
 </script>
+<style>
+	.distpicker-address-wrapper select{
+		padding: 0;
+		font-size: 12px;
+	}
+</style>
 <style lang='less' scoped>
   @keyframes zuoshang{
 		form{
@@ -179,8 +185,8 @@ export default{
 			left: -50px
 		}
 		to{
-			top: 600px;
-			left: 250px;
+			top: 90vh;
+			left: 60%;
 		}
 	}
 	.img-dong{
@@ -416,7 +422,7 @@ export default{
 					width: 240px;
 					display: flex;
 					margin-right: 20px;
-					
+					padding: 0;
 				}
 			}
 		}
@@ -449,8 +455,9 @@ export default{
 		.shangheGO{
 			border: 1px solid #ddd;
 			margin-top: 10px;
-      height: 130px;
+			height: 130px;
 			.GO{
+				width: 100%;
 				color: #222;
 				font-size: 12px;
 				padding: 11px 0 5px;
@@ -481,6 +488,10 @@ export default{
 				}
 			}
 			.buyed{
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				min-width: 360px;
 				a{
 					width: 112px;
 					height: 74px;
@@ -531,6 +542,7 @@ export default{
 		}
 	}
 	footer{
+		width: 100%;
 		position: fixed;
 		bottom: 0px;
 		z-index: 10;
@@ -564,22 +576,22 @@ export default{
 				}
 			}
 			& >:nth-child(1){
-				background: url(../../static/shopimg/kefu_b.png) no-repeat 15px 5px;
+				background: url(../../static/shopimg/kefu_b.png) no-repeat center 5px;
 				background-size: 18px;
-				width: 51px;
+				width: 15%;
 			}
 			& >:nth-child(2){
-				width: 51px;
-				background: url(../../static/shopimg/favorite_r.png) no-repeat 15px 5px;
+				width: 15%;
+				background: url(../../static/shopimg/favorite_r.png) no-repeat center 5px;
 				background-size: 18px;
 			}
 			& >:nth-child(3){
-				width: 69px;
-				background: url(../../static/shopimg/icon-cart.png) no-repeat 23px 5px;
+				width: 20%;
+				background: url(../../static/shopimg/icon-cart.png) no-repeat center 5px;
 				background-size: 18px;
 			}
 			& >:nth-child(4),& >:nth-child(5){
-				width: 93px;
+				width: 25%;
 				font-size: 14px;
 				background-color: #ffc110;
 				border: none;
@@ -594,30 +606,27 @@ export default{
 		}
 	}
 	.pop-up{
-		background-color: #595959;
-		width: 360px;
-		height: 1px;
+		width: 100%;
+		height: 100vh;
 		position: fixed;
-		top: 640px;
+		top: 100vh;
 		left: 0;
 		z-index: 11;
 		transition: all 1s;
+		display: flex;
+		flex-direction: column;
 		.dake{
-			width: 360px;
-			height: 400px;
+			width: 100%;
 			opacity: .7;
 			background-color: #595959;
-			position: absolute;
-			top: 0px;
+			flex-grow: 1;
 		}
 		.high-light{
-			width: 360px;
+			width: 100%;
 			height: 240px;
-			position: absolute;
-			top: 400px;
 			background-color: #fff;
 			opacity: 11;
-			z-index: 15;
+			position: relative;
 			img{
 				width: 95px;
 				height: 95px;

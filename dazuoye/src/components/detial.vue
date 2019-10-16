@@ -22,6 +22,7 @@ export default{
     img{
       width: 360px;
       display: block;
+      margin: auto;
     }
   }
 </style>

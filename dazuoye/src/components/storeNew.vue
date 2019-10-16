@@ -91,7 +91,7 @@
 		methods:{
 			chuan(item){
 				this.$router.push({
-					name:"shop",
+					name:"shangpin",
 					params:{
 						item
 					}
@@ -102,9 +102,9 @@
 </script>
 <style lang="less" scoped>
 	.bujv{
-		width: 99%;
+		width: 360px;
 		padding: 0;
-		margin: 0;
+		margin: 0 auto;
 		background-color: white;
 		list-style-type: none;
 		display: flex;

@@ -52,7 +52,7 @@
 		methods:{
 			chuan(item){
 				this.$router.push({
-				        name:"shop",
+				        name:"shangpin",
 				        params:{
 				          item
 				        }

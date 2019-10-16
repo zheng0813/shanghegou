@@ -29,6 +29,9 @@
 			</div>
 			<ul>
 				<li v-show='JSON.stringify(count)!="{}"'>
+					<span class="sojbk" @click="alls">
+						<img src="/static/list/ok.png" alt="" class="ojbk" v-show="panduan">
+					</span>
 					<div class="shanghegou">
 						尚赫GO
 					</div>
@@ -37,6 +40,7 @@
 					</div>
 				</li>
 				<li v-for="(item,b,i) in count" :key='i'>
+					<img :src="pic['a'+i]" alt="" class="ojbk" @click="all(i)">
 					<img :src="item.src" alt="">
 					<div class="name">{{item.msg}}</div>
 					<div class="rem" @click="delbox=item.msg" v-show='shanchu'>删除</div>
@@ -53,6 +57,15 @@
 				count:JSON.parse(localStorage.getItem("kind")),
 				delbox:false,
 				shanchu:false,
+				pic: {},
+				panduan:true,
+			}
+		},
+		created(){
+			var x=0;
+			for(var i in this.count){
+					this.pic["a"+x]="/static/list/ok.png";
+					x++;
 			}
 		},
 		methods:{
@@ -83,6 +96,33 @@
 					this.shanchu = true
 				}else{
 				this.shanchu = false
+				}
+			},
+			all(i){
+				if(this.pic['a'+i]){
+					this.pic['a'+i]="";
+				}else{
+						this.pic['a'+i]="/static/list/ok.png";
+				}
+					this.$forceUpdate()
+					this.panduan=true;
+					for(var j in this.pic){
+						if(!this.pic[j]){
+							this.panduan=false;
+						}
+					}
+			},
+			alls(){
+				if(this.panduan){
+					for(var j in this.pic){
+						this.pic[j]="";
+					}
+					this.panduan=false;
+				}else if(this.panduan==false){
+					for(var j in this.pic){
+						this.pic[j]="/static/list/ok.png";
+					}
+					this.panduan=true;
 				}
 			}
 		}
@@ -160,11 +200,18 @@
 				list-style-type: none;
 				width: 100%;
 				height: 100px;
-				background: url(../../static/list/ok.png) no-repeat 10px center;
-				background-size: 15px;
 				border: 1px solid #ddd;
 				box-sizing: border-box;
 				position: relative;
+				.ojbk{
+					width: 15px;
+					height: 15px;
+					border-radius: 15px;
+					border: 1px solid #ccc;
+					position: absolute;
+					top: 40%;
+					left: 10px;
+				}
 				.rem{
 					width: 50px;
 					background-color:#017472;
@@ -191,7 +238,7 @@
 					border: none;
 					padding-left: 50px;
 					background: none;
-					background: url(../../static/shopimg/bbc-bg7.png) no-repeat 30px 18px;
+					background: url(/static/shopimg/bbc-bg7.png) no-repeat 30px 18px;
 					background-size: 15px;
 				}
 				.write{
@@ -203,7 +250,19 @@
 				height: 50px;
 				display: flex;
 				justify-content: space-between;
-				
+			}
+			.sojbk{
+				width: 15px;
+				height: 15px;
+				border-radius: 15px;
+				border: 1px solid #ccc;
+				position: absolute;
+				top: 40%;
+				left: 10px;
+				img{
+					top: 0;
+					left: 0;
+				}
 			}
 		}
 		.bus{
@@ -212,7 +271,7 @@
 			font-size: 17px;
 			color: #bcbcbc;
 			text-align: center;
-			background-image: url(../../static/kindimg/bbc-bg15.png);
+			background-image: url(/static/kindimg/bbc-bg15.png);
 			background-repeat: no-repeat;
 			background-position: center;
 		}
@@ -226,7 +285,7 @@
 			display: inline-block;
 				width: 9px;
 				height: 17px;
-				background: url(../../static/kindimg/bbc-bg45.png) no-repeat center;
+				background: url(/static/kindimg/bbc-bg45.png) no-repeat center;
 				background-size: cover;
 				position: absolute;
 				top: 14px;
@@ -252,7 +311,7 @@
 			position: absolute;
 			top: 0;
 			right: 0;
-			background-image: url(../../static/kindimg/bbc-bg48.png);
+			background-image: url(/static/kindimg/bbc-bg48.png);
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: 20px;
@@ -280,7 +339,7 @@
 					height: 42px;
 					line-height: 42px;
 					box-sizing: border-box;
-					background-image: url(../../static/kindimg/icon-in.png);
+					background-image: url(/static/kindimg/icon-in.png);
 					background-repeat: no-repeat;
 					background-size: 18px;
 					background-position: 13px center;
@@ -292,13 +351,13 @@
 					}
 				}
 				& :nth-child(2){
-					background-image: url(../../static/kindimg/bbc-bg15.png);
+					background-image: url(/static/kindimg/bbc-bg15.png);
 				}
 				& :nth-child(3){
-					background-image: url(../../static/kindimg/bbc-bg13.png);
+					background-image: url(/static/kindimg/bbc-bg13.png);
 				}
 				& :nth-child(4){
-					background-image: url(../../static/kindimg/message.png);
+					background-image: url(/static/kindimg/message.png);
 				}
 			}
 		}

@@ -177,7 +177,7 @@
 			},
 			chuan(item){
 				this.$router.push({
-				        name:"shop",
+				        name:"shangpin",
 				        params:{
 				          item
 				        }
@@ -416,10 +416,13 @@
 			display: flex;
 			flex-wrap: wrap;
 			& :nth-child(1){
-				width: 177px;
+				width: 100%;
 				height: 200px;
 				padding: 0;
+				display: block;
+				margin: auto;
 				img{
+					
 					padding: 0;
 					width: 177px;
 					height: 177px;
@@ -458,6 +461,9 @@
 						padding: 0 0 5px;
 						padding: 0;
 						margin: 0;
+					}
+					& :nth-child(2){
+						text-align: right;
 					}
 				}
 			}
@@ -601,6 +607,9 @@
 								padding: 0 0 5px;
 								padding: 0;
 								margin: 0;
+							}
+							& :nth-child(2){
+								text-align: right;
 							}
 						}
 					}

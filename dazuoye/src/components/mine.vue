@@ -3,8 +3,11 @@
     <div class="bg">
       <div class="donghua">
         <router-link to='' class="yuan"></router-link>
-        <router-link to='into' class="into">登录</router-link>
-        <router-link to='into' class="zhuce">| 注册</router-link>
+        <div class="denglu">
+          <router-link to='into' class="into">登录</router-link>
+          <router-link to='into' class="zhuce">| 注册</router-link>
+        </div>
+        
       </div>
     </div>
     <div class="gongneng">
@@ -67,6 +70,10 @@ export default{
         width: 100%;
         height: 100px;
         position: absolute;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: auto;
         animation: donghua 1.5s forwards;
         .yuan{
           display: block;
@@ -76,20 +83,19 @@ export default{
           background-color: rgba(0, 0, 0, 0.5);
           margin: 0 auto;
           line-height: 250px;
-          position: absolute;
-          top: 0px;
-          left: 145px;
+        }
+        .denglu{
+          width: 100%;
         }
         .into,.zhuce{
           font-size: 16px;
-          position: absolute;
-          bottom: 0px;
-          left: 140px;
+          width: 50%;
+          text-align: right;
           text-decoration: none;
           color: white;
         }
         .zhuce{
-          left: 177px;
+          text-align: left;
         }
       }
     }
