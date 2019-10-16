@@ -21,7 +21,10 @@
 				</nav>
 			</header>
 		</transition>
-		<router-view/>
+		<transition :name="transitionName">
+			<router-view></router-view>
+		</transition>
+		<!-- <router-view/> -->
 	</div>
 </template>
 <script>
@@ -32,7 +35,8 @@ export default{
 			return{
 				aa:false,
 				dis:false,
-				a:1
+				a:1,
+				transitionName:''
 			}
 		},
 		mounted: function () {
@@ -64,6 +68,17 @@ export default{
 					this.a = a;
 				}
 			}
+		},
+		watch: {
+			'$route' (to, from) {
+				console.log(to)
+				let toName = to.name
+
+				const toIndex = to.meta.index
+				const fromIndex = from.meta.index
+
+				this.transitionName = toIndex < fromIndex ? 'slide-right' : 'slide-left'
+			}
 		}
 	}
 </script>
@@ -89,14 +104,45 @@ select{
     cursor: pointer;
   }
 }
+
 </style>
 <style lang='less' scoped>
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
+  will-change: transform;
+  transition: all 500ms;
+  position: absolute;
+}
+
+.slide-right-enter {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+
+.slide-left-enter {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+
+.slide-left-leave-active {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
 	header{
-		width: 100%;
+		width: 100vw;
 		height: 45px;
 		padding: 0;
 		background-color: #fff;
 		position: fixed;
+		left:0;
+		top:0;
 		z-index: 5;
 		nav{
 			.go-out{
@@ -135,7 +181,7 @@ select{
 				display: inline-block;
 				width: 21px;
 				height: 21px;
-				position: fixed;
+				position: absolute;
 				top: 12px;
 				right: 12px;
 				background-image: url(../../static/kindimg/bbc-bg48.png);

@@ -105,17 +105,26 @@ export default new Router({
         {
           path: '/shangpin',
           name: 'shangpin',
-          component: shangpin
+          component: shangpin,
+          meta: {
+            index: 0
+          }
         },
         {
           path: '/detial',
           name: 'detial',
-          component: detial
+          component: detial,
+          meta: {
+            index: 1
+          }
         },
         {
           path: '/recommend',
           name: 'recommend',
-          component: recommend
+          component: recommend,
+          meta: {
+            index: 2
+          }
         }
       ]
     },
