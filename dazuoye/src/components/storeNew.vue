@@ -91,11 +91,11 @@
 		methods:{
 			chuan(item){
 				this.$router.push({
-				        name:"shop",
-				        params:{
-				          item
-				        }
-				      })
+					name:"shop",
+					params:{
+						item
+					}
+				})
 			}
 		}
 	}

@@ -291,11 +291,11 @@
 	}
 </script>
 <style lang="less" scoped>
-.list-box{
-	width: 100vw;
-	height: 100vh;
-	background-color: #f5f5f5;
-}
+	.list-box{
+		width: 100vw;
+		height: 100vh;
+		background-color: #f5f5f5;
+	}
 	.yinying{
 		width: 100%;
 		height: 100vh;

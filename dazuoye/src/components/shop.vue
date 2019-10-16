@@ -26,7 +26,6 @@
 </template>
 <script>
 import VDistpicker from 'v-distpicker'
-
 export default{
 	components: { VDistpicker },
   data:function(){
@@ -51,7 +50,6 @@ export default{
 				}
 			},
 			handleScroll(){
-				console.log(this.a)
 				if(this.a==1){
 					if(pageYOffset>70){
 						this.dis = true
@@ -64,7 +62,6 @@ export default{
 				if(a!=1){
 					this.dis = true
 					this.a = a;
-					console.log(a)
 				}
 			}
 		}

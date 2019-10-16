@@ -55,9 +55,6 @@
 				shanchu:false,
 			}
 		},
-		mounted(){
-			
-		},
 		methods:{
 			goto:function(){
 				history.back()
@@ -76,7 +73,6 @@
 						localStorage.setItem("kind",JSON.stringify(this.count))
 					}
 				}
-				
 				this.delbox=false
 			},
 			no(){
@@ -222,89 +218,89 @@
 		}
 	}
 	header{
-			width: 100%;
-			height: 45px;
-			padding: 0;
-			position: relative;
-			i{
-				display: inline-block;
-					width: 9px;
-					height: 17px;
-					background: url(../../static/kindimg/bbc-bg45.png) no-repeat center;
-					background-size: cover;
-					position: absolute;
-					top: 14px;
-					left: 10px;
-					z-index: 11;
-			}
-			.search{
-				display: inline-block;
-				width: 70%;
-				height: 33px;
-				box-sizing: border-box;
-				line-height: 33px;
+		width: 100%;
+		height: 45px;
+		padding: 0;
+		position: relative;
+		i{
+			display: inline-block;
+				width: 9px;
+				height: 17px;
+				background: url(../../static/kindimg/bbc-bg45.png) no-repeat center;
+				background-size: cover;
 				position: absolute;
-				top: 6px;
-				left: 15%;
-				text-align: center;
-				font-size: 18px;
-			}
-			&>span{
-				display: inline-block;
-				width: 43px;
-				height: 43px;
-				position: absolute;
-				top: 0;
-				right: 0;
-				background-image: url(../../static/kindimg/bbc-bg48.png);
-				background-repeat: no-repeat;
-				background-position: center;
-				background-size: 20px;
+				top: 14px;
+				left: 10px;
 				z-index: 11;
-				.sanjiao{
-					width: 0;
-					height: 0;
-					border: 10px solid transparent;
-					border-bottom: 10px solid #333333;
-					position: absolute;
-					bottom: 0;
-					left: 11px;
-				}
-				ul{
-					position: absolute;
+		}
+		.search{
+			display: inline-block;
+			width: 70%;
+			height: 33px;
+			box-sizing: border-box;
+			line-height: 33px;
+			position: absolute;
+			top: 6px;
+			left: 15%;
+			text-align: center;
+			font-size: 18px;
+		}
+		&>span{
+			display: inline-block;
+			width: 43px;
+			height: 43px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-image: url(../../static/kindimg/bbc-bg48.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 20px;
+			z-index: 11;
+			.sanjiao{
+				width: 0;
+				height: 0;
+				border: 10px solid transparent;
+				border-bottom: 10px solid #333333;
+				position: absolute;
+				bottom: 0;
+				left: 11px;
+			}
+			ul{
+				position: absolute;
+				width: 110px;
+				height: 170px;
+				right: 2px;
+				bottom: -182px;
+				list-style-type: none;
+				padding: 0;
+				border-radius: 5px;
+				li{
 					width: 110px;
-					height: 170px;
-					right: 2px;
-					bottom: -182px;
-					list-style-type: none;
-					padding: 0;
-					border-radius: 5px;
-					li{
-						width: 110px;
-						height: 42px;
-						line-height: 42px;
-						box-sizing: border-box;
-						background-image: url(../../static/kindimg/icon-in.png);
-						background-repeat: no-repeat;
-						background-size: 18px;
-						background-position: 13px center;
-						background-color: #333;
-						padding: 0 0 0 38px;
-						a{
-							color: white;
-							text-decoration: none;
-						}
+					height: 42px;
+					line-height: 42px;
+					box-sizing: border-box;
+					background-image: url(../../static/kindimg/icon-in.png);
+					background-repeat: no-repeat;
+					background-size: 18px;
+					background-position: 13px center;
+					background-color: #333;
+					padding: 0 0 0 38px;
+					a{
+						color: white;
+						text-decoration: none;
 					}
-					& :nth-child(2){
-						background-image: url(../../static/kindimg/bbc-bg15.png);
-					}
-					& :nth-child(3){
-						background-image: url(../../static/kindimg/bbc-bg13.png);
-					}
-					& :nth-child(4){
-						background-image: url(../../static/kindimg/message.png);
-					}
+				}
+				& :nth-child(2){
+					background-image: url(../../static/kindimg/bbc-bg15.png);
+				}
+				& :nth-child(3){
+					background-image: url(../../static/kindimg/bbc-bg13.png);
+				}
+				& :nth-child(4){
+					background-image: url(../../static/kindimg/message.png);
 				}
 			}
 		}
+	}
 </style>
